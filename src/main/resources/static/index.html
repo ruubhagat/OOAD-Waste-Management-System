@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hyperlocal Smart Waste Management System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Bengaluru's Hyperlocal Smart Waste Management System</h1>
+    </header>
+
+    <main>
+        <section class="container">
+            <h2>Request Waste Pickup</h2>
+            <form id="pickupForm">
+                <div class="form-group">
+                    <label for="wasteType">Waste Type:</label>
+                    <select id="wasteType" required>
+                        <option value="">Select waste type</option>
+                        <option value="Plastic">Plastic</option>
+                        <option value="Electronic">Electronic</option>
+                        <option value="Organic">Organic</option>
+                        <option value="Hazardous">Hazardous</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="location">Pickup Location:</label>
+                    <input type="text" id="location" required>
+                </div>
+                <div class="form-group">
+                    <label for="pickupDateTime">Pickup Date & Time:</label>
+                    <input type="datetime-local" id="pickupDateTime" required>
+                </div>
+                <div class="form-group">
+                    <label for="userName">Your Name:</label>
+                    <input type="text" id="userName" required>
+                </div>
+                <button type="submit" class="btn-submit">Schedule Pickup</button>
+            </form>
+        </section>
+
+        <section class="container">
+            <h2>Your Pickup Requests</h2>
+            <div class="filter-buttons">
+                <button id="showAll" class="btn-filter active">All</button>
+                <button id="showPending" class="btn-filter">Pending</button>
+                <button id="showScheduled" class="btn-filter">Scheduled</button>
+                <button id="showCompleted" class="btn-filter">Completed</button>
+            </div>
+            <div class="pickup-list" id="pickupList">
+                <p class="no-pickups">No pickup requests found.</p>
+            </div>
+        </section>
+    </main>
+
+    <div id="overlay" class="overlay">
+        <div class="modal">
+            <div class="modal-header">
+                <h3>Edit Pickup Request</h3>
+                <button id="closeModal" class="close-btn">&times;</button>
+            </div>
+            <form id="editForm">
+                <input type="hidden" id="editId">
+                <div class="form-group">
+                    <label for="editWasteType">Waste Type:</label>
+                    <select id="editWasteType" required>
+                        <option value="Plastic">Plastic</option>
+                        <option value="Electronic">Electronic</option>
+                        <option value="Organic">Organic</option>
+                        <option value="Hazardous">Hazardous</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="editLocation">Pickup Location:</label>
+                    <input type="text" id="editLocation" required>
+                </div>
+                <div class="form-group">
+                    <label for="editPickupDateTime">Pickup Date & Time:</label>
+                    <input type="datetime-local" id="editPickupDateTime" required>
+                </div>
+                <div class="form-group">
+                    <label for="editUserName">Your Name:</label>
+                    <input type="text" id="editUserName" required>
+                </div>
+                <div class="form-group">
+                    <label for="editStatus">Status:</label>
+                    <select id="editStatus" required>
+                        <option value="Pending">Pending</option>
+                        <option value="Scheduled">Scheduled</option>
+                        <option value="Completed">Completed</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn-submit">Update Pickup</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 PES University - Hyperlocal Smart Waste Management System</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
